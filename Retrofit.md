@@ -69,6 +69,7 @@ Create data model to parse JSON data.
 
 # 6 
       ApiClient apiInterface = RetrofitApiClient.getRetrofit().create(ApiClient.class);
+      
       apiInterface.getData().enqueue(new Callback<JsonResponse>() {
             @Override
             public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {

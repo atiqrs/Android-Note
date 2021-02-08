@@ -66,4 +66,32 @@ Create data model to parse JSON data.
                    @Query("JSON_Field_Name") String StringName,
                    @Query("JSON_Field_Name") String StringName,
                    );
-              
+
+# 6 
+      ApiClient apiInterface = RetrofitApiClient.getRetrofit().create(ApiClient.class);
+      apiInterface.getData().enqueue(new Callback<JsonResponse>() {
+            @Override
+            public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
+
+                String picApi = response.body().getResults().get(0).getPicture().getThumbnail();
+                String FNameApi = response.body().getResults().get(0).getName().getFirst();
+                String LNameApi = response.body().getResults().get(0).getName().getLast();
+                String GenderApi = response.body().getResults().get(0).getGender();
+                String UsernameApi = response.body().getResults().get(0).getLogin().getUsername();
+                String EmailApi = response.body().getResults().get(0).getEmail();
+                String MobileApi = response.body().getResults().get(0).getPhone();
+
+                Picasso.get().load(picApi).into(MidId);
+                fName.setText(FNameApi);
+                lName.setText(LNameApi);
+                Gender.setText(GenderApi);
+                username.setText(UsernameApi);
+                Email.setText(EmailApi);
+                Mobile.setText(MobileApi);
+            }
+
+            @Override
+            public void onFailure(Call<JsonResponse> call, Throwable t) {
+
+            }
+        });

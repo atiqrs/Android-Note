@@ -42,3 +42,28 @@ Create data model to parse JSON data.
             return retrofit;
         }
     }
+    
+# 5
+     public interface ApiClient {
+             * GET
+             * POST
+             * QUERY DATA
+     }
+      
+## 5.1 GET
+     @GET("SUB_BASE_API")
+        Call< MODEL_CLASS_NAME > getData();
+## 5.2 POST
+    @FormUrlEncoded
+    @POST("SUB_BASE_API")
+    Call<MODEL_CLASS_NAME> postData(@Field("JSON_Field_Name") String StringName,
+                                        @Field("JSON_Field_Name") String StringName,
+                                        @Field("JSON_Field_Name") String StringName,
+                                        );
+## 5.3 GET
+    @GET("SUB_BASE_API")
+    Call<SignInResponse> queryData(@Query("JSON_Field_Name") String StringName,
+                   @Query("JSON_Field_Name") String StringName,
+                   @Query("JSON_Field_Name") String StringName,
+                   );
+              

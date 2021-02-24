@@ -1,10 +1,12 @@
 ## Snakbar
 
+```dart
     void snak(){
         Scaffold.of(context).showSnackBar(SnackBar(
               content: Text('Tap'),
             ));
       }
+```
 or
 
       (){Scaffold.of(context).showSnackBar(SnackBar(

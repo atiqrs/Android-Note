@@ -66,3 +66,30 @@ or
                           thickness: 1,
                         ),
 
+## Card full design
+
+    Card(
+                      margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      shadowColor: Color(0xffeddcd2),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Flexible(fit: FlexFit.tight, child: SizedBox()),
+
+
+                              ],
+                            ),
+                            Divider(
+                              color: Color(0xffeddcd2),
+                              thickness: 1,
+                            ),
+
+                          ],
+                        ),
+                      )),

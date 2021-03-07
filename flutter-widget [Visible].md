@@ -52,3 +52,17 @@ or
                         
                         ),
 
+## row and middle space
+
+        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Flexible(fit: FlexFit.tight, child: SizedBox()),
+
+                          ],
+                        ),
+                        Divider(
+                          color: Color(0xffeddcd2),
+                          thickness: 1,
+                        ),
+
